@@ -19,7 +19,7 @@ class CarouselActivity : AppCompatActivity() {
         setContentView(R.layout.activity_carousel)
         var carouselData = intent.getStringExtra("carousel")
         val range = carouselData?.toInt() ?: 1
-        (0..range).map { list.add("$it") }
+        (0 until range).map { list.add("$it") }
         val cl = findViewById<CustomViewTest>(R.id.cl)
         cl.sentCarouselLength(list.size)
         // cl.colorRes(CarouselColor(R.color.gray, R.color.white)) // reverse
@@ -38,12 +38,12 @@ class CarouselActivity : AppCompatActivity() {
         button = findViewById<Button>(R.id.button)
         button.setOnClickListener {
             cl.setSelectedPosition((count) % list.size)
+            setButtonText((count) % list.size)
             count++
-            setButtonText(count)
         }
     }
 
     private fun setButtonText(count: Int) {
-        button.text = "I am at page : ${count - 1}"
+        button.text = "I am at page : ${count}"
     }
 }

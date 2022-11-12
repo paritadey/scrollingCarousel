@@ -58,7 +58,16 @@ class CustomViewTest(context: Context, attrs: AttributeSet) : ConstraintLayout(c
     }
 
     override fun onSnapPositionChange(position: Int, direction: SnapOnScrollListener.Direction) {
-        if (list.size == 7) {
+        if(list.size in 2..6){
+            list.map {
+                it.isSelected = false
+                it.viewType = 1
+            }
+            list[position].apply {
+                isSelected = true
+                viewType = 3
+            }
+        }else if (list.size == 7) {
             when (position) {
                 0 -> {
                     list[0].apply {
@@ -515,7 +524,16 @@ class CustomViewTest(context: Context, attrs: AttributeSet) : ConstraintLayout(c
 
 
     fun setSelectedPosition(position: Int) {
-        if (list.size == 7) {
+        if(list.size in 2..6){
+            list.map {
+                it.isSelected = false
+                it.viewType = 1
+            }
+            list[position].apply {
+                isSelected = true
+                viewType = 3
+            }
+        }else if (list.size == 7) {
             when (position) {
                 0 -> {
                     list[0].apply {
