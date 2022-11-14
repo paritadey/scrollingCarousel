@@ -30,5 +30,7 @@ i
 9app/src/test/java/com/parita/mcarousel/ExampleUnitTest.kt,4\0\4035789a9488fb83b2bd0f94af0365033b9effa9
 m
 =app/src/main/java/com/parita/mcarousel/MainCarouselAdapter.kt,8\4\84eca9bc004c8a59d293ad123697e3b1ccf2de99
-m
-=app/src/main/java/com/parita/mcarousel/ShowCarouselAdapter.kt,e\b\eb5d8a6e4a9e4a7836f3105a4b5713064b60e02c
+f
+6app/src/main/java/com/parita/mcarousel/MainActivity.kt,f\f\fff504b4d37233065801752f6d55644d32f63f8e
+n
+>app/src/main/java/com/parita/mcarousel/SnapOnScrollListener.kt,b\e\befb3144507695274d1ed37389ecd00cc52cd309
