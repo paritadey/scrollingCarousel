@@ -58,450 +58,12 @@ class CustomViewTest(context: Context, attrs: AttributeSet) : ConstraintLayout(c
     }
 
     override fun onSnapPositionChange(position: Int, direction: SnapOnScrollListener.Direction) {
-        if(list.size in 2..6){
-            list.map {
-                it.isSelected = false
-                it.viewType = 1
-            }
-            list[position].apply {
-                isSelected = true
-                viewType = 3
-            }
-        }else if (list.size == 7) {
-            when (position) {
-                0 -> {
-                    list[0].apply {
-                        isSelected = true
-                        viewType = 3
-                    }
-                    list[1].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[2].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[3].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[4].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[5].apply {
-                        isSelected = false
-                        viewType = 4
-                    }
-                    list[6].apply {
-                        isSelected = false
-                        viewType = 4
-                    }
-                }
-                1 -> {
-                    list[0].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[1].apply {
-                        isSelected = true
-                        viewType = 3
-                    }
-                    list[2].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[3].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[4].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[5].apply {
-                        isSelected = false
-                        viewType = 4
-                    }
-                    list[6].apply {
-                        isSelected = false
-                        viewType = 4
-                    }
-                }
-                2 -> {
-                    list[0].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[1].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[2].apply {
-                        isSelected = true
-                        viewType = 3
-                    }
-                    list[3].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[4].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[5].apply {
-                        isSelected = false
-                        viewType = 4
-                    }
-                    list[5].apply {
-                        isSelected = false
-                        viewType = 4
-                    }
-                }
-                3 -> {
-                    list[0].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[1].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[2].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[3].apply {
-                        isSelected = true
-                        viewType = 3
-                    }
-                    list[4].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[5].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[6].apply {
-                        isSelected = false
-                        viewType = 4
-                    }
-                }
-                4 -> {
-                    list[0].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[1].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[2].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[3].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[4].apply {
-                        isSelected = true
-                        viewType = 3
-                    }
-                    list[5].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[6].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                }
-                5 -> {
-                    list[0].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[1].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[2].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[3].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[4].apply {
-                        isSelected = true
-                        viewType = 3
-                    }
-                    list[5].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[6].apply {
-                        isSelected = false
-                        viewType = 4
-                    }
-                }
-                6 -> {
-                    list[0].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[1].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[2].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[3].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[4].apply {
-                        isSelected = true
-                        viewType = 3
-                    }
-                    list[5].apply {
-                        isSelected = false
-                        viewType = 4
-                    }
-                    list[6].apply {
-                        isSelected = false
-                        viewType = 4
-                    }
-                }
-                else -> {
-                    list[7].apply {
-                        isSelected = false
-                        viewType = 4
-                    }
-                }
-
-            }
+        if (list.size in 2..6) {
+            setCarousel2_6Dots(position)
+        } else if (list.size == 7) {
+            setCarousel7Dots(position)
         } else if (list.size > 7) {
-            when (position) {
-                0 -> {
-                    list[0].apply {
-                        isSelected = true
-                        viewType = 3
-                    }
-                    list[1].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[2].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[3].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[4].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    for (i in 5..list.size - 1) {
-                        list[i].apply {
-                            isSelected = false
-                            viewType = 4
-                        }
-                    }
-                }
-                1 -> {
-                    list[0].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[1].apply {
-                        isSelected = true
-                        viewType = 3
-                    }
-                    list[2].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[3].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[4].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    for (i in 5..list.size - 1) {
-                        list[i].apply {
-                            isSelected = false
-                            viewType = 4
-                        }
-                    }
-                }
-                2 -> {
-                    list[0].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[1].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[2].apply {
-                        isSelected = true
-                        viewType = 3
-                    }
-                    list[3].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[4].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    for (i in 5..list.size - 1) {
-                        list[i].apply {
-                            isSelected = false
-                            viewType = 4
-                        }
-                    }
-                }
-                3 -> {
-                    list[0].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[1].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[2].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[3].apply {
-                        isSelected = true
-                        viewType = 3
-                    }
-                    list[4].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[5].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    for (i in 6..list.size - 1) {
-                        list[i].apply {
-                            isSelected = false
-                            viewType = 4
-                        }
-                    }
-                }
-                list.size - 2 -> {
-                    list[0].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[1].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[2].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[3].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[4].apply {
-                        isSelected = true
-                        viewType = 3
-                    }
-                    list[5].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    for (i in 6..list.size - 1) {
-                        list[i].apply {
-                            isSelected = false
-                            viewType = 4
-                        }
-                    }
-                }
-                list.size - 1 -> {
-                    list[0].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[1].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[2].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[3].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[4].apply {
-                        isSelected = true
-                        viewType = 3
-                    }
-                    for (i in 5..list.size - 1) {
-                        list[i].apply {
-                            isSelected = false
-                            viewType = 4
-                        }
-                    }
-                }
-                else -> {
-                    list[0].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[1].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[2].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[3].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[4].apply {
-                        isSelected = true
-                        viewType = 3
-                    }
-                    list[5].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[6].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    for (i in 7..list.size - 1) {
-                        list[i].apply {
-                            isSelected = false
-                            viewType = 4
-                        }
-                    }
-                }
-            }
+            setCarousel7moreDots(position)
         }
         progressRV.smoothScrollToPosition(position)
         carouselAdapter.notifyDataSetChanged()
@@ -524,443 +86,12 @@ class CustomViewTest(context: Context, attrs: AttributeSet) : ConstraintLayout(c
 
 
     fun setSelectedPosition(position: Int) {
-        if(list.size in 2..6){
-            list.map {
-                it.isSelected = false
-                it.viewType = 1
-            }
-            list[position].apply {
-                isSelected = true
-                viewType = 3
-            }
-        }else if (list.size == 7) {
-            when (position) {
-                0 -> {
-                    list[0].apply {
-                        isSelected = true
-                        viewType = 3
-                    }
-                    list[1].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[2].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[3].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[4].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[5].apply {
-                        isSelected = false
-                        viewType = 4
-                    }
-                    list[6].apply {
-                        isSelected = false
-                        viewType = 4
-                    }
-                }
-                1 -> {
-                    list[0].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[1].apply {
-                        isSelected = true
-                        viewType = 3
-                    }
-                    list[2].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[3].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[4].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[5].apply {
-                        isSelected = false
-                        viewType = 4
-                    }
-                    list[6].apply {
-                        isSelected = false
-                        viewType = 4
-                    }
-                }
-                2 -> {
-                    list[0].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[1].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[2].apply {
-                        isSelected = true
-                        viewType = 3
-                    }
-                    list[3].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[4].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[5].apply {
-                        isSelected = false
-                        viewType = 4
-                    }
-                    list[5].apply {
-                        isSelected = false
-                        viewType = 4
-                    }
-                }
-                3 -> {
-                    list[0].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[1].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[2].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[3].apply {
-                        isSelected = true
-                        viewType = 3
-                    }
-                    list[4].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[5].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[6].apply {
-                        isSelected = false
-                        viewType = 4
-                    }
-                }
-                4 -> {
-                    list[0].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[1].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[2].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[3].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[4].apply {
-                        isSelected = true
-                        viewType = 3
-                    }
-                    list[5].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[6].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                }
-                5 -> {
-                    list[0].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[1].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[2].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[3].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[4].apply {
-                        isSelected = true
-                        viewType = 3
-                    }
-                    list[5].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[6].apply {
-                        isSelected = false
-                        viewType = 4
-                    }
-                }
-                6 -> {
-                    list[0].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[1].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[2].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[3].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[4].apply {
-                        isSelected = true
-                        viewType = 3
-                    }
-                    list[5].apply {
-                        isSelected = false
-                        viewType = 4
-                    }
-                    list[6].apply {
-                        isSelected = false
-                        viewType = 4
-                    }
-                }
-            }
+        if (list.size in 2..6) {
+            setCarousel2_6Dots(position)
+        } else if (list.size == 7) {
+            setCarousel7Dots(position)
         } else if (list.size > 7) {
-            when (position) {
-                0 -> {
-                    list[0].apply {
-                        isSelected = true
-                        viewType = 3
-                    }
-                    list[1].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[2].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[3].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[4].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    for (i in 5..list.size - 1) {
-                        list[i].apply {
-                            isSelected = false
-                            viewType = 4
-                        }
-                    }
-                }
-                1 -> {
-                    list[0].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[1].apply {
-                        isSelected = true
-                        viewType = 3
-                    }
-                    list[2].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[3].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[4].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    for (i in 5..list.size - 1) {
-                        list[i].apply {
-                            isSelected = false
-                            viewType = 4
-                        }
-                    }
-                }
-                2 -> {
-                    list[0].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[1].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[2].apply {
-                        isSelected = true
-                        viewType = 3
-                    }
-                    list[3].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[4].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    for (i in 5..list.size - 1) {
-                        list[i].apply {
-                            isSelected = false
-                            viewType = 4
-                        }
-                    }
-                }
-                3 -> {
-                    list[0].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[1].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[2].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[3].apply {
-                        isSelected = true
-                        viewType = 3
-                    }
-                    list[4].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[5].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    for (i in 6..list.size - 1) {
-                        list[i].apply {
-                            isSelected = false
-                            viewType = 4
-                        }
-                    }
-                }
-                list.size - 2 -> {
-                    list[0].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[1].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[2].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[3].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[4].apply {
-                        isSelected = true
-                        viewType = 3
-                    }
-                    list[5].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    for (i in 6..list.size - 1) {
-                        list[i].apply {
-                            isSelected = false
-                            viewType = 4
-                        }
-                    }
-                }
-                list.size - 1 -> {
-                    list[0].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[1].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[2].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[3].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[4].apply {
-                        isSelected = true
-                        viewType = 3
-                    }
-                    for (i in 5..list.size - 1) {
-                        list[i].apply {
-                            isSelected = false
-                            viewType = 4
-                        }
-                    }
-                }
-                else -> {
-                    list[0].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[1].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[2].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[3].apply {
-                        isSelected = false
-                        viewType = 1
-                    }
-                    list[4].apply {
-                        isSelected = true
-                        viewType = 3
-                    }
-                    list[5].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    list[6].apply {
-                        isSelected = false
-                        viewType = 2
-                    }
-                    for (i in 7..list.size - 1) {
-                        list[i].apply {
-                            isSelected = false
-                            viewType = 4
-                        }
-                    }
-                }
-            }
+            setCarousel7moreDots(position)
         }
         progressRV.smoothScrollToPosition(position)
         carouselAdapter.notifyDataSetChanged()
@@ -978,4 +109,453 @@ class CustomViewTest(context: Context, attrs: AttributeSet) : ConstraintLayout(c
         requestLayout()
     }
 
+    fun setCarousel2_6Dots(position: Int) {
+        list.map {
+            it.isSelected = false
+            it.viewType = 1
+        }
+        list[position].apply {
+            isSelected = true
+            viewType = 3
+        }
+    }
+
+    fun setCarousel7Dots(position: Int) {
+        when (position) {
+            0 -> {
+                list[0].apply {
+                    isSelected = true
+                    viewType = 3
+                }
+                list[1].apply {
+                    isSelected = false
+                    viewType = 1
+                }
+                list[2].apply {
+                    isSelected = false
+                    viewType = 1
+                }
+                list[3].apply {
+                    isSelected = false
+                    viewType = 2
+                }
+                list[4].apply {
+                    isSelected = false
+                    viewType = 2
+                }
+                list[5].apply {
+                    isSelected = false
+                    viewType = 4
+                }
+                list[6].apply {
+                    isSelected = false
+                    viewType = 4
+                }
+            }
+            1 -> {
+                list[0].apply {
+                    isSelected = false
+                    viewType = 1
+                }
+                list[1].apply {
+                    isSelected = true
+                    viewType = 3
+                }
+                list[2].apply {
+                    isSelected = false
+                    viewType = 1
+                }
+                list[3].apply {
+                    isSelected = false
+                    viewType = 2
+                }
+                list[4].apply {
+                    isSelected = false
+                    viewType = 2
+                }
+                list[5].apply {
+                    isSelected = false
+                    viewType = 4
+                }
+                list[6].apply {
+                    isSelected = false
+                    viewType = 4
+                }
+            }
+            2 -> {
+                list[0].apply {
+                    isSelected = false
+                    viewType = 1
+                }
+                list[1].apply {
+                    isSelected = false
+                    viewType = 1
+                }
+                list[2].apply {
+                    isSelected = true
+                    viewType = 3
+                }
+                list[3].apply {
+                    isSelected = false
+                    viewType = 2
+                }
+                list[4].apply {
+                    isSelected = false
+                    viewType = 2
+                }
+                list[5].apply {
+                    isSelected = false
+                    viewType = 4
+                }
+                list[5].apply {
+                    isSelected = false
+                    viewType = 4
+                }
+            }
+            3 -> {
+                list[0].apply {
+                    isSelected = false
+                    viewType = 2
+                }
+                list[1].apply {
+                    isSelected = false
+                    viewType = 1
+                }
+                list[2].apply {
+                    isSelected = false
+                    viewType = 1
+                }
+                list[3].apply {
+                    isSelected = true
+                    viewType = 3
+                }
+                list[4].apply {
+                    isSelected = false
+                    viewType = 2
+                }
+                list[5].apply {
+                    isSelected = false
+                    viewType = 2
+                }
+                list[6].apply {
+                    isSelected = false
+                    viewType = 4
+                }
+            }
+            4 -> {
+                list[0].apply {
+                    isSelected = false
+                    viewType = 2
+                }
+                list[1].apply {
+                    isSelected = false
+                    viewType = 2
+                }
+                list[2].apply {
+                    isSelected = false
+                    viewType = 1
+                }
+                list[3].apply {
+                    isSelected = false
+                    viewType = 1
+                }
+                list[4].apply {
+                    isSelected = true
+                    viewType = 3
+                }
+                list[5].apply {
+                    isSelected = false
+                    viewType = 2
+                }
+                list[6].apply {
+                    isSelected = false
+                    viewType = 2
+                }
+            }
+            5 -> {
+                list[0].apply {
+                    isSelected = false
+                    viewType = 2
+                }
+                list[1].apply {
+                    isSelected = false
+                    viewType = 2
+                }
+                list[2].apply {
+                    isSelected = false
+                    viewType = 1
+                }
+                list[3].apply {
+                    isSelected = false
+                    viewType = 1
+                }
+                list[4].apply {
+                    isSelected = true
+                    viewType = 3
+                }
+                list[5].apply {
+                    isSelected = false
+                    viewType = 2
+                }
+                list[6].apply {
+                    isSelected = false
+                    viewType = 4
+                }
+            }
+            6 -> {
+                list[0].apply {
+                    isSelected = false
+                    viewType = 2
+                }
+                list[1].apply {
+                    isSelected = false
+                    viewType = 2
+                }
+                list[2].apply {
+                    isSelected = false
+                    viewType = 1
+                }
+                list[3].apply {
+                    isSelected = false
+                    viewType = 1
+                }
+                list[4].apply {
+                    isSelected = true
+                    viewType = 3
+                }
+                list[5].apply {
+                    isSelected = false
+                    viewType = 4
+                }
+                list[6].apply {
+                    isSelected = false
+                    viewType = 4
+                }
+            }
+            else -> {
+                list[7].apply {
+                    isSelected = false
+                    viewType = 4
+                }
+            }
+
+        }
+    }
+
+    fun setCarousel7moreDots(position: Int) {
+        when (position) {
+            0 -> {
+                list[0].apply {
+                    isSelected = true
+                    viewType = 3
+                }
+                list[1].apply {
+                    isSelected = false
+                    viewType = 1
+                }
+                list[2].apply {
+                    isSelected = false
+                    viewType = 1
+                }
+                list[3].apply {
+                    isSelected = false
+                    viewType = 2
+                }
+                list[4].apply {
+                    isSelected = false
+                    viewType = 2
+                }
+                for (i in 5..list.size - 1) {
+                    list[i].apply {
+                        isSelected = false
+                        viewType = 4
+                    }
+                }
+            }
+            1 -> {
+                list[0].apply {
+                    isSelected = false
+                    viewType = 1
+                }
+                list[1].apply {
+                    isSelected = true
+                    viewType = 3
+                }
+                list[2].apply {
+                    isSelected = false
+                    viewType = 1
+                }
+                list[3].apply {
+                    isSelected = false
+                    viewType = 2
+                }
+                list[4].apply {
+                    isSelected = false
+                    viewType = 2
+                }
+                for (i in 5..list.size - 1) {
+                    list[i].apply {
+                        isSelected = false
+                        viewType = 4
+                    }
+                }
+            }
+            2 -> {
+                list[0].apply {
+                    isSelected = false
+                    viewType = 1
+                }
+                list[1].apply {
+                    isSelected = false
+                    viewType = 1
+                }
+                list[2].apply {
+                    isSelected = true
+                    viewType = 3
+                }
+                list[3].apply {
+                    isSelected = false
+                    viewType = 2
+                }
+                list[4].apply {
+                    isSelected = false
+                    viewType = 2
+                }
+                for (i in 5..list.size - 1) {
+                    list[i].apply {
+                        isSelected = false
+                        viewType = 4
+                    }
+                }
+            }
+            3 -> {
+                list[0].apply {
+                    isSelected = false
+                    viewType = 2
+                }
+                list[1].apply {
+                    isSelected = false
+                    viewType = 1
+                }
+                list[2].apply {
+                    isSelected = false
+                    viewType = 1
+                }
+                list[3].apply {
+                    isSelected = true
+                    viewType = 3
+                }
+                list[4].apply {
+                    isSelected = false
+                    viewType = 2
+                }
+                list[5].apply {
+                    isSelected = false
+                    viewType = 2
+                }
+                for (i in 6..list.size - 1) {
+                    list[i].apply {
+                        isSelected = false
+                        viewType = 4
+                    }
+                }
+            }
+            list.size - 2 -> {
+                list[0].apply {
+                    isSelected = false
+                    viewType = 2
+                }
+                list[1].apply {
+                    isSelected = false
+                    viewType = 2
+                }
+                list[2].apply {
+                    isSelected = false
+                    viewType = 1
+                }
+                list[3].apply {
+                    isSelected = false
+                    viewType = 1
+                }
+                list[4].apply {
+                    isSelected = true
+                    viewType = 3
+                }
+                list[5].apply {
+                    isSelected = false
+                    viewType = 2
+                }
+                for (i in 6..list.size - 1) {
+                    list[i].apply {
+                        isSelected = false
+                        viewType = 4
+                    }
+                }
+            }
+            list.size - 1 -> {
+                list[0].apply {
+                    isSelected = false
+                    viewType = 2
+                }
+                list[1].apply {
+                    isSelected = false
+                    viewType = 2
+                }
+                list[2].apply {
+                    isSelected = false
+                    viewType = 1
+                }
+                list[3].apply {
+                    isSelected = false
+                    viewType = 1
+                }
+                list[4].apply {
+                    isSelected = true
+                    viewType = 3
+                }
+                for (i in 5..list.size - 1) {
+                    list[i].apply {
+                        isSelected = false
+                        viewType = 4
+                    }
+                }
+            }
+            else -> {
+                list[0].apply {
+                    isSelected = false
+                    viewType = 2
+                }
+                list[1].apply {
+                    isSelected = false
+                    viewType = 2
+                }
+                list[2].apply {
+                    isSelected = false
+                    viewType = 1
+                }
+                list[3].apply {
+                    isSelected = false
+                    viewType = 1
+                }
+                list[4].apply {
+                    isSelected = true
+                    viewType = 3
+                }
+                list[5].apply {
+                    isSelected = false
+                    viewType = 2
+                }
+                list[6].apply {
+                    isSelected = false
+                    viewType = 2
+                }
+                for (i in 7..list.size - 1) {
+                    list[i].apply {
+                        isSelected = false
+                        viewType = 4
+                    }
+                }
+            }
+        }
+    }
 }

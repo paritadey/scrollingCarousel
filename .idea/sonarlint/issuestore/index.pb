@@ -34,3 +34,5 @@ f
 6app/src/main/java/com/parita/mcarousel/MainActivity.kt,f\f\fff504b4d37233065801752f6d55644d32f63f8e
 n
 >app/src/main/java/com/parita/mcarousel/SnapOnScrollListener.kt,b\e\befb3144507695274d1ed37389ecd00cc52cd309
+S
+#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
