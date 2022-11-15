@@ -1,6 +1,7 @@
 package com.parita.mcarousel
 
 import android.os.Bundle
+import android.view.accessibility.AccessibilityEvent
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearSnapHelper
@@ -14,6 +15,7 @@ class CarouselActivity : AppCompatActivity() {
     var count = 0
     lateinit var button: Button
     private var directionForward: Boolean = true
+    private lateinit var cl:CustomViewTest
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,7 +23,7 @@ class CarouselActivity : AppCompatActivity() {
         var carouselData = intent.getStringExtra("carousel")
         val range = carouselData?.toInt() ?: 1
         (0 until range).map { list.add("$it") }
-        val cl = findViewById<CustomViewTest>(R.id.cl)
+        cl = findViewById<CustomViewTest>(R.id.cl)
         cl.sentCarouselLength(list.size)
         cl.colorRes(CarouselColor(R.color.gray, R.color.white)) // non -reverse
         //cl.colorRes(CarouselColor(R.color.white, R.color.gray)) //reverse
@@ -41,8 +43,9 @@ class CarouselActivity : AppCompatActivity() {
 
         button = findViewById<Button>(R.id.button)
         button.setOnClickListener {
-            cl.setSelectedPosition((count) % list.size)
-            setButtonText((count) % list.size)
+            val position = ((count)%list.size)
+            cl.setSelectedPosition(position)
+            setButtonText(position, list.size)
             if (directionForward) {
                 count++
                 if (count == list.size) {
@@ -56,11 +59,13 @@ class CarouselActivity : AppCompatActivity() {
                     count = 1
                 }
             }
-
         }
     }
 
-    private fun setButtonText(count: Int) {
+    private fun setButtonText(count: Int, size: Int) {
         button.text = "I am at page : ${count + 1}"
+        button.requestFocus()
+        button.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_CLICKED)
+        button.announceForAccessibility("Slide ${count+1} of $size")
     }
 }

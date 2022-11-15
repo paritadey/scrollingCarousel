@@ -32,7 +32,7 @@ m
 =app/src/main/java/com/parita/mcarousel/MainCarouselAdapter.kt,8\4\84eca9bc004c8a59d293ad123697e3b1ccf2de99
 f
 6app/src/main/java/com/parita/mcarousel/MainActivity.kt,f\f\fff504b4d37233065801752f6d55644d32f63f8e
-n
->app/src/main/java/com/parita/mcarousel/SnapOnScrollListener.kt,b\e\befb3144507695274d1ed37389ecd00cc52cd309
 S
 #.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
+g
+7app/src/main/java/com/parita/mcarousel/CarouselColor.kt,e\a\ea0acb31862a5c707cbac7857ab145e024070b19

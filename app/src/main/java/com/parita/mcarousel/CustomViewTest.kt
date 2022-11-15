@@ -2,7 +2,11 @@ package com.parita.mcarousel
 
 import android.content.Context
 import android.util.AttributeSet
+import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.view.AccessibilityDelegateCompat
+import androidx.core.view.ViewCompat
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import androidx.recyclerview.widget.*
 
 class CustomViewTest(context: Context, attrs: AttributeSet) : ConstraintLayout(context, attrs),
@@ -557,5 +561,11 @@ class CustomViewTest(context: Context, attrs: AttributeSet) : ConstraintLayout(c
                 }
             }
         }
+    }
+
+    fun checkDotAccessibility(position: Int) {
+        /*AccessibilityManager.addAccessInfoRoleDesc(
+            mainRV, "Active $position"
+        )*/
     }
 }
